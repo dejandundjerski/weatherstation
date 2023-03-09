@@ -23,14 +23,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET')
 			$hum[] = $row['humidity'];
 			$rain[] = $row['rain_mm'];
 			$windDir[] = $row['wind_dir_deg'];
-			$windAvg[] = $row['wind_avg_m_s'] + rand(1,3);
-			$windMax[] = $row['wind_max_m_s'];// + rand(4,7);
+			$windAvg[] = $row['wind_avg_m_s'];
+			$windMax[] = $row['wind_max_m_s'];
 			$batteryOk = $row['battery_ok'];
 
 			if (strtotime($row['time']) > strtotime('-24 hour'))
 			{
 				$windDir1D[] = $row['wind_dir_deg'];
 				$windAvg1D[] = $row['wind_avg_m_s'];
+				
 				if (strtotime($row['time']) > strtotime('-1 hour'))
 				{
 					$windDir1h[] = $row['wind_dir_deg'];
