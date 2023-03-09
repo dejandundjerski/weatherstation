@@ -25,6 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET')
 			$windDir[] = $row['wind_dir_deg'];
 			$windAvg[] = $row['wind_avg_m_s'] + rand(1,3);
 			$windMax[] = $row['wind_max_m_s'];// + rand(4,7);
+			$batteryOk = $row['battery_ok'];
 
 			if (strtotime($row['time']) > strtotime('-24 hour'))
 			{
@@ -43,6 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET')
 		print_r(json_encode($array));
 	}
 	else {
+		$uptime = exec('uptime');
 		?>
 
 		<html>
@@ -54,6 +56,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET')
 	</head>
 		<body>
 		<div class="container">
+			<div id="srvinfo" class="row>
+				<div class=".col-xs-4 .col-md-4">Server @<?php echo $uptime; ?></div>
+				<div class=".col-xs-4 .col-md-4"></div>
+				<div class=".col-xs-4 .col-md-4">Battery life: <?php if ($batteryOk == 1) { echo 'OK'; } else { echo 'Error'; } ?></div>
+			</div>
 		<div id="windrose" class="row">
 			<div class=".col-xs-4 .col-md-4"><div id="windrose1h" class="responsive-plot"></div></div>
 		        <div class=".col-xs-4 .col-md-4"><div id="windrose1d" class="responsive-plot"></div></div>
