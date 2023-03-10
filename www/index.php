@@ -281,7 +281,7 @@ var windAvg = {
 };
 
 var windMax = {
-	  x: <?php print_r(json_encode($ts)); ? ,
+	  x: <?php print_r(json_encode($ts)); ?>,
 	  y: <?php print_r(json_encode($windMax)); ?>,
 	  xaxis: 'x3',
 	  yaxis: 'y3',
