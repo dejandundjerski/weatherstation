@@ -23,8 +23,8 @@ while (FALSE !== ($line = fgets(STDIN)))
 {
 	if ($oldLine != $line)
 	{
-		sendToUrl('http://localhost/index.php', $line);
-		sendToUrl('http://ddwwwhost.cloudapp.net/index.php', $line);
+		sendToUrl('http://localhost/push.php', $line);
+		sendToUrl('http://ddwwwhost.cloudapp.net/push.php', $line);
 		$oldLine = $line;
 	}
 }
