@@ -261,6 +261,7 @@ var temp = {
  	y: <?php print_r(json_encode($temp)); ?>,
 	xaxis: 'x1',
 	yaxis: 'y1',
+	name: 'Temp*C',
 	type: 'scatter'
 };
 
@@ -269,6 +270,7 @@ var hum = {
 	y: <?php print_r(json_encode($hum)); ?>,
 	xaxis: 'x2',
 	yaxis: 'y2',
+	name: 'Vlaznost(%)',
 	type: 'scatter'
 };
 
@@ -277,15 +279,17 @@ var windAvg = {
 	y: <?php print_r(json_encode($windAvg)); ?>,
 	xaxis: 'x3',
 	yaxis: 'y3',
+	name: 'Vetar AVG(m/s)',
 	type: 'scatter'
 };
 
 var windMax = {
-	  x: <?php print_r(json_encode($ts)); ?>,
-	  y: <?php print_r(json_encode($windMax)); ?>,
-	  xaxis: 'x3',
-	  yaxis: 'y3',
-	  type: 'scatter'
+	x: <?php print_r(json_encode($ts)); ?>,
+	y: <?php print_r(json_encode($windMax)); ?>,
+	xaxis: 'x3',
+	yaxis: 'y3',
+	name: 'Vetar MAX(m/s)',
+	type: 'scatter'
 };
 
 var windDir = {
@@ -293,6 +297,7 @@ var windDir = {
 	y: <?php print_r(json_encode($windDir)); ?>,
 	xaxis: 'x4',
 	yaxis: 'y4',
+	name: 'Pravac vetra',
 	type: 'scatter'
 };
 
