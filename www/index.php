@@ -241,14 +241,14 @@ else {
 <body>
 <div class="container">
 	<div id="srvinfo" class="row">
-		<div class=".col-xs-4 .col-md-4">Server @<?php echo $uptime; ?></div>
-		<div class=".col-xs-4 .col-md-4"></div>
-		<div class=".col-xs-4 .col-md-4">Weather station battery life: <?php if ($batteryOk == 1) { echo 'OK'; } else { echo 'Error'; } ?></div>
+		<div class="col-xs-4 col-md-4">Server @<?php echo $uptime; ?></div>
+		<div class="col-xs-4 col-md-4"></div>
+		<div class="col-xs-4 col-md-4">Weather station battery life: <?php if ($batteryOk == 1) { echo 'OK'; } else { echo 'Error'; } ?></div>
 	</div>
 	<div id="windrose" class="row">
-		<div class=".col-xs-4 .col-md-4"><div id="windrose1h" class="responsive-plot"></div></div>
-	        <div class=".col-xs-4 .col-md-4"><div id="windrose1d" class="responsive-plot"></div></div>
-	        <div class=".col-xs-4 .col-md-4"><div id="windrose7d" class="responsive-plot"></div></div>
+		<div class="col-xs-4 col-md-4"><div id="windrose1h" class="responsive-plot"></div></div>
+	        <div class="col-xs-4 col-md-4"><div id="windrose1d" class="responsive-plot"></div></div>
+	        <div class="col-xs-4 col-md-4"><div id="windrose7d" class="responsive-plot"></div></div>
 	</div>
 	<div id="data" class="row">
 		<div id="ws"></div>
@@ -575,11 +575,10 @@ var data = [temp, hum, windAvg, windMax, windDir, rain];
 Plotly.newPlot('ws', data, layoutChart, config);
 
 (function() {
-  var d3 = Plotly.d3;
   var WIDTH_IN_PERCENT_OF_PARENT = 100,
       HEIGHT_IN_PERCENT_OF_PARENT = 90;
   
-  var gd3 = d3.selectAll(".responsive-plot")
+  var gd3 = $(".responsive-plot")
       .style({
         width: WIDTH_IN_PERCENT_OF_PARENT + '%',
         'margin-left': (100 - WIDTH_IN_PERCENT_OF_PARENT) / 2 + '%',
