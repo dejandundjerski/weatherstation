@@ -250,7 +250,7 @@ else {
 	        <div class="col-xs-12 col-md-4"><div id="windrose7d" class="responsive-plot"></div></div>
 	</div>
 	<div id="data" class="row">
-		<div id="ws" class="col-xs-12 col-md-12"></div>
+		<div id="ws"></div>
 	</div>
 </div>
 </body>
@@ -519,7 +519,7 @@ var dataBP1d = [barplot1d,barplot2d,barplot3d,barplot4d,barplot5d,barplot6d,barp
 var dataBP1h = [barplot1h,barplot2h,barplot3h,barplot4h,barplot5h,barplot6h,barplot7h,barplot8h,barplot9h];
 
 var layout7d = {
-	title: "JK Zemun - Meteo stanica - 7 dana",
+	title: "JKZ - Ruza vetrova - 7 dana",
 	polar: {
 		barmode: "overlay",
 		bargap: 0,
@@ -530,7 +530,7 @@ var layout7d = {
 };
 	
 var layout1d = {
-	title: "JK Zemun - Meteo stanica - 24 sata",
+	title: "JKZ - Ruza vetrova - 24 sata",
 	polar: {
 		barmode: "overlay",
 		bargap: 0,
@@ -541,7 +541,7 @@ var layout1d = {
 };
 	
 var layout1h = {
-	title: "JK Zemun - Meteo stanica - poslednji sat",
+	title: "JKZ - Ruza vetrova - poslednji sat",
 	polar: {
 		barmode: "overlay",
 		bargap: 0,
@@ -578,7 +578,7 @@ var axis8 = {domain: [0.80, 0.99], anchor: 'x1' }
 var axis10 ={domain: [0.00, 0.19], anchor: 'x5' } 
 
 var layoutChart = {
-	title: "JK Zemun - Meteo stanica",
+	title: "JK Zemun - Meteo stanica - 7 dana",
 	showlegend: false,
 	xaxis1: Object.assign(axis1,axis),
 	xaxis2: Object.assign(axis2,axis),
