@@ -519,8 +519,30 @@ var dataBP7d = [barplot1,barplot2,barplot3,barplot4,barplot5,barplot6,barplot7,b
 var dataBP1d = [barplot1d,barplot2d,barplot3d,barplot4d,barplot5d,barplot6d,barplot7d,barplot8d,barplot9d];
 var dataBP1h = [barplot1h,barplot2h,barplot3h,barplot4h,barplot5h,barplot6h,barplot7h,barplot8h,barplot9h];
 
-var layout = {
-	title: "JK Zemun - Meteo stanica",
+var layout7d = {
+	title: "JK Zemun - Meteo stanica - 7 dana",
+	polar: {
+		barmode: "overlay",
+		bargap: 0,
+		radialaxis: {ticksuffix: "m/s", angle: 0, dtick: 1},
+		angularaxis: {direction: "clockwise"}
+	},
+	grid: {rows: 1, columns: 1, pattern: 'independent'},
+};
+	
+var layout1d = {
+	title: "JK Zemun - Meteo stanica - 24 sata",
+	polar: {
+		barmode: "overlay",
+		bargap: 0,
+		radialaxis: {ticksuffix: "m/s", angle: 0, dtick: 1},
+		angularaxis: {direction: "clockwise"}
+	},
+	grid: {rows: 1, columns: 1, pattern: 'independent'},
+};
+	
+var layout1h = {
+	title: "JK Zemun - Meteo stanica - poslednjih sat vremena",
 	polar: {
 		barmode: "overlay",
 		bargap: 0,
@@ -531,9 +553,9 @@ var layout = {
 };
 
 var config = {responsive: true};
-Plotly.newPlot( 'windrose7d' , dataBP7d, layout,config);
-Plotly.newPlot( 'windrose1d' , dataBP1d, layout,config);
-Plotly.newPlot( 'windrose1h' , dataBP1h, layout,config);
+Plotly.newPlot( 'windrose7d' , dataBP7d, layout7d, config);
+Plotly.newPlot( 'windrose1d' , dataBP1d, layout1d, config);
+Plotly.newPlot( 'windrose1h' , dataBP1h, layout1h, config);
 
 var axis = {
 	showline: true,
@@ -574,27 +596,28 @@ var layoutChart = {
 var data = [temp, hum, windAvg, windMax, windDir, rain];
 Plotly.newPlot('ws', data, layoutChart, config);
 
-(function() {
-  var WIDTH_IN_PERCENT_OF_PARENT = 100,
-      HEIGHT_IN_PERCENT_OF_PARENT = 90;
-  
-  var gd3 = $(".responsive-plot")
-      .style({
-        width: WIDTH_IN_PERCENT_OF_PARENT + '%',
-        'margin-left': (100 - WIDTH_IN_PERCENT_OF_PARENT) / 2 + '%',
-        
-        height: HEIGHT_IN_PERCENT_OF_PARENT + 'vh',
-        'margin-top': (100 - HEIGHT_IN_PERCENT_OF_PARENT) / 2 + 'vh'
-      });
 
-  var nodes_to_resize = gd3[0]; //not sure why but the goods are within a nested array
-  window.onresize = function() {
-    for (var i = 0; i < nodes_to_resize.length; i++) {
-      Plotly.Plots.resize(nodes_to_resize[i]);
-    }
-  };
-  
-}());
+////(function() {
+////  var WIDTH_IN_PERCENT_OF_PARENT = 100,
+////      HEIGHT_IN_PERCENT_OF_PARENT = 90;
+////  
+////  var gd3 = $(".responsive-plot")
+////      .style({
+////        width: WIDTH_IN_PERCENT_OF_PARENT + '%',
+////        'margin-left': (100 - WIDTH_IN_PERCENT_OF_PARENT) / 2 + '%',
+////        
+////        height: HEIGHT_IN_PERCENT_OF_PARENT + 'vh',
+////        'margin-top': (100 - HEIGHT_IN_PERCENT_OF_PARENT) / 2 + 'vh'
+////      });
+////
+////  var nodes_to_resize = gd3[0]; //not sure why but the goods are within a nested array
+////  window.onresize = function() {
+////    for (var i = 0; i < nodes_to_resize.length; i++) {
+////      Plotly.Plots.resize(nodes_to_resize[i]);
+////    }
+////  };
+////  
+////}());
 
 </script>
 </html>
