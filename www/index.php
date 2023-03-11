@@ -306,6 +306,7 @@ var rain = {
 	y: <?php print_r(json_encode($rain)); ?>,
 	xaxis: 'x5',
 	yaxis: 'y5',
+	name: 'Kisa (mm)',
 	type: 'scatter'
 };
 
@@ -584,7 +585,7 @@ var axis10 ={domain: [0.00, 0.19], anchor: 'x5' }
 
 var layoutChart = {
 	title: "JK Zemun - Meteo stanica - 7 dana",
-	showlegend: false,
+	showlegend: true,
 	xaxis1: Object.assign(axis1,axis),
 	xaxis2: Object.assign(axis2,axis),
 	xaxis3: Object.assign(axis7,axis),
