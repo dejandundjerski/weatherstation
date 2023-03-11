@@ -240,7 +240,7 @@ else {
 </head>
 <body>
 <div class="container">
-	<div id="srvinfo" class="row>
+	<div id="srvinfo" class="row">
 		<div class=".col-xs-4 .col-md-4">Server @<?php echo $uptime; ?></div>
 		<div class=".col-xs-4 .col-md-4"></div>
 		<div class=".col-xs-4 .col-md-4">Weather station battery life: <?php if ($batteryOk == 1) { echo 'OK'; } else { echo 'Error'; } ?></div>
@@ -253,7 +253,8 @@ else {
 	<div id="data" class="row">
 		<div id="ws"></div>
 	</div>
-</div></body>
+</div>
+</body>
 
 <script>
 var temp = {
