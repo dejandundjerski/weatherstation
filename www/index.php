@@ -314,210 +314,240 @@ var barplot0 = {
 	r: <?php print_r(json_encode($windAvg0)); ?>,
 	theta: <?php print_r(json_encode($windDir0)); ?>,
 	name: '<0.5m/s',
-	type: 'scatterpolar'
+	type: 'scatterpolar',
+        mode: 'markers+text'
 };
 			    
 var barplot1 = {
 	r: <?php print_r(json_encode($windAvg1)); ?>,
 	theta: <?php print_r(json_encode($windDir1)); ?>,
 	name: '0.5-1.5m/s',
-	type: 'scatterpolar'
+	type: 'scatterpolar',
+	mode: 'markers+text'
 };
 
 var barplot2 = {
 	r: <?php print_r(json_encode($windAvg2)); ?>,
 	theta: <?php print_r(json_encode($windDir2)); ?>,
 	name: '1.5-3m/s',
-	type: 'scatterpolar'
+	type: 'scatterpolar',
+        mode: 'markers+text'
 };
 
 var barplot3 = {
 	r: <?php print_r(json_encode($windAvg3)); ?>,
 	theta: <?php print_r(json_encode($windDir3)); ?>,
 	name: '3-5m/s',
-	type: 'scatterpolar'
+	type: 'scatterpolar',
+        mode: 'markers+text'
 };
 
 var barplot4 = {
 	r: <?php print_r(json_encode($windAvg4)); ?>,
 	theta: <?php print_r(json_encode($windDir4)); ?>,
 	name: '5-8m/s',
-	type: 'scatterpolar'
+	type: 'scatterpolar',
+        mode: 'markers+text'
 };
 
 var barplot5 = {
 	r: <?php print_r(json_encode($windAvg5)); ?>,
 	theta: <?php print_r(json_encode($windDir5)); ?>,
 	name: '8-10.5m/s',
-	type: 'scatterpolar'
+	type: 'scatterpolar',
+        mode: 'markers+text'
 };
-			    
+
 var barplot6 = {
 	r: <?php print_r(json_encode($windAvg6)); ?>,
 	theta: <?php print_r(json_encode($windDir6)); ?>,
 	name: '10.5-13.5m/s',
-	type: 'scatterpolar'
+	type: 'scatterpolar',
+        mode: 'markers+text'
 };
-			    
+
 var barplot7 = {
 	r: <?php print_r(json_encode($windAvg7)); ?>,
 	theta: <?php print_r(json_encode($windDir7)); ?>,
 	name: '13.5-16.5m/s',
-	type: 'scatterpolar'
+	type: 'scatterpolar',
+        mode: 'markers+text'
 };
 
 var barplot8 = {
 	r: <?php print_r(json_encode($windAvg8)); ?>,
 	theta: <?php print_r(json_encode($windDir8)); ?>,
 	name: '16.5-20m/s',
-	type: 'scatterpolar'
+	type: 'scatterpolar',
+        mode: 'markers+text'
 };
 
 var barplot9 = {
 	r: <?php print_r(json_encode($windAvg9)); ?>,
 	theta: <?php print_r(json_encode($windDir9)); ?>,
 	name: '>20m/s',
-	type: 'scatterpolar'
+	type: 'scatterpolar',
+        mode: 'markers+text'
 };
 
 var barplot0h = {
 	r: <?php print_r(json_encode($windAvg1H0)); ?>,
 	theta: <?php print_r(json_encode($windDir1H0)); ?>,
 	name: '<0.5m/s',
-	type: 'scatterpolar'
+	type: 'scatterpolar',
+        mode: 'markers+text'
 };
 
 var barplot1h = {
 	r: <?php print_r(json_encode($windAvg1H1)); ?>,
 	theta: <?php print_r(json_encode($windDir1H1)); ?>,
 	name: '0.5-1.5m/s',
-	type: 'scatterpolar'
+	type: 'scatterpolar',
+        mode: 'markers+text'
 };
 
 var barplot2h = {
 	r: <?php print_r(json_encode($windAvg1H2)); ?>,
 	theta: <?php print_r(json_encode($windDir1H2)); ?>,
 	name: '1.5-3m/s',
-	type: 'scatterpolar'
+	type: 'scatterpolar',
+        mode: 'markers+text'
 };
 
 var barplot3h = {
 	r: <?php print_r(json_encode($windAvg1H3)); ?>,
 	theta: <?php print_r(json_encode($windDir1H3)); ?>,
 	name: '3-5m/s',
-	type: 'scatterpolar'
+	type: 'scatterpolar',
+        mode: 'markers+text'
 };
 
 var barplot4h = {
 	r: <?php print_r(json_encode($windAvg1H4)); ?>,
 	theta: <?php print_r(json_encode($windDir1H4)); ?>,
 	name: '5-8m/s',
-	type: 'scatterpolar'
+	type: 'scatterpolar',
+        mode: 'markers+text'
 };
 
 var barplot5h = {
 	r: <?php print_r(json_encode($windAvg1H5)); ?>,
 	theta: <?php print_r(json_encode($windDir1H5)); ?>,
 	name: '8-10.5m/s',
-	type: 'scatterpolar'
-};
-			    
+	type: 'scatterpolar',
+        mode: 'markers+text'
+}
+
 var barplot6h = {
 	r: <?php print_r(json_encode($windAvg1H6)); ?>,
 	theta: <?php print_r(json_encode($windDir1H6)); ?>,
 	name: '10.5-13.5m/s',
-	type: 'scatterpolar'
+	type: 'scatterpolar',
+        mode: 'markers+text'
 };
 			    
 var barplot7h = {
 	r: <?php print_r(json_encode($windAvg1H7)); ?>,
 	theta: <?php print_r(json_encode($windDir1H7)); ?>,
 	name: '13.5-16.5m/s',
-	type: 'scatterpolar'
+	type: 'scatterpolar',
+        mode: 'markers+text'
 };
 
 var barplot8h = {
 	r: <?php print_r(json_encode($windAvg1H8)); ?>,
 	theta: <?php print_r(json_encode($windDir1H8)); ?>,
 	name: '16.5-20m/s',
-	type: 'scatterpolar'
+	type: 'scatterpolar',
+        mode: 'markers+text'
 };
 
 var barplot9h = {
 	r: <?php print_r(json_encode($windAvg1H9)); ?>,
 	theta: <?php print_r(json_encode($windDir1H9)); ?>,
 	name: '>20m/s',
-	type: 'scatterpolar'
+	type: 'scatterpolar',
+        mode: 'markers+text'
 };
 
 var barplot0d = {
 	r: <?php print_r(json_encode($windAvg1D0)); ?>,
 	theta: <?php print_r(json_encode($windDir1D0)); ?>,
 	name: '<0.5m/s',
-	type: 'scatterpolar'
+	type: 'scatterpolar',
+        mode: 'markers+text'
 };
 
 var barplot1d = {
 	r: <?php print_r(json_encode($windAvg1D1)); ?>,
 	theta: <?php print_r(json_encode($windDir1D1)); ?>,
 	name: '0.5-1.5m/s',
-	type: 'scatterpolar'
+	type: 'scatterpolar',
+        mode: 'markers+text'
 };
 
 var barplot2d = {
 	r: <?php print_r(json_encode($windAvg1D2)); ?>,
 	theta: <?php print_r(json_encode($windDir1D2)); ?>,
 	name: '1.5-3m/s',
-	type: 'scatterpolar'
+	type: 'scatterpolar',
+        mode: 'markers+text'
 };
 
 var barplot3d = {
 	r: <?php print_r(json_encode($windAvg1D3)); ?>,
 	theta: <?php print_r(json_encode($windDir1D3)); ?>,
 	name: '3-5m/s',
-	type: 'scatterpolar'
+	type: 'scatterpolar',
+        mode: 'markers+text'
 };
 
 var barplot4d = {
 	r: <?php print_r(json_encode($windAvg1D4)); ?>,
 	theta: <?php print_r(json_encode($windDir1D4)); ?>,
 	name: '5-8m/s',
-	type: 'scatterpolar'
+	type: 'scatterpolar',
+        mode: 'markers+text'
 };
 
 var barplot5d = {
 	r: <?php print_r(json_encode($windAvg1D5)); ?>,
 	theta: <?php print_r(json_encode($windDir1D5)); ?>,
 	name: '8-10.5m/s',
-	type: 'scatterpolar'
+	type: 'scatterpolar',
+        mode: 'markers+text'
 };
 			    
 var barplot6d = {
 	r: <?php print_r(json_encode($windAvg1D6)); ?>,
 	theta: <?php print_r(json_encode($windDir1D6)); ?>,
 	name: '10.5-13.5m/s',
-	type: 'scatterpolar'
+	type: 'scatterpolar',
+        mode: 'markers+text'
 };
 			    
 var barplot7d = {
 	r: <?php print_r(json_encode($windAvg1D7)); ?>,
 	theta: <?php print_r(json_encode($windDir1D7)); ?>,
 	name: '13.5-16.5m/s',
-	type: 'scatterpolar'
+	type: 'scatterpolar',
+        mode: 'markers+text'
 };
 
 var barplot8d = {
 	r: <?php print_r(json_encode($windAvg1D8)); ?>,
 	theta: <?php print_r(json_encode($windDir1D8)); ?>,
 	name: '16.5-20m/s',
-	type: 'scatterpolar'
+	type: 'scatterpolar',
+        mode: 'markers+text'
 };
 
 var barplot9d = {
 	r: <?php print_r(json_encode($windAvg1D9)); ?>,
 	theta: <?php print_r(json_encode($windDir1D9)); ?>,
 	name: '>20m/s',
-	type: 'scatterpolar'
+	type: 'scatterpolar',
+        mode: 'markers+text'
 };
 
 var dataBP7d = [barplot1,barplot2,barplot3,barplot4,barplot5,barplot6,barplot7,barplot8,barplot9];
