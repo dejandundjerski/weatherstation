@@ -168,6 +168,15 @@ else {
 ?>
 <html>
 <head>
+	<style>
+		table, th, td {
+			border: 2px solid black;
+	  		border-collapse: collapse;
+		}
+		th, td {
+	  		padding: 5px;
+		}
+	</style>
 	<script src="https://cdn.plot.ly/plotly-2.18.2.min.js"></script>
 	<script src="https://code.jquery.com/jquery-3.6.3.slim.min.js" integrity="sha256-ZwqZIVdD3iXNyGHbSYdsmWP//UBokj2FHAxKuSBKDSo=" crossorigin="anonymous"></script>	
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
