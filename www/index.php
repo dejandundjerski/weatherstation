@@ -15,79 +15,14 @@ while ($row = $res->fetch_assoc()) {
 	}
 	else
 	{
+		$lastRow = $row;
 		$ts[] = $row['time'];
 		$temp[] = $row['temperature_C'];
 		$hum[] = $row['humidity'];
 		$rain[] = $row['rain_mm'];
 		$windDir[] = $row['wind_dir_deg'];
 		$windAvg[] = $row['wind_avg_m_s'];
-		
-		if ($row['wind_avg_m_s'] <= 0.5)
-		{
-			// 0 --- Calm	< 0.5 m/s
-			$windAvg0[] = $row['wind_avg_m_s'];
-			$windDir0[] = $row['wind_dir_deg'];
-		}
-		else if ($row['wind_avg_m_s'] > 0.5 && $row['wind_avg_m_s'] <= 1.5)
-		{
-			// 1 --- Light air	0.5-1.5 m/s
-			$windAvg1[] = $row['wind_avg_m_s'];
-			$windDir1[] = $row['wind_dir_deg'];
-		}
-		else if ($row['wind_avg_m_s'] > 1.5 && $row['wind_avg_m_s'] <= 3)
-		{
-			// 2 --- Light breeze 2-3 m/s
-			$windAvg2[] = $row['wind_avg_m_s'];
-			$windDir2[] = $row['wind_dir_deg'];
-		}
-		else if ($row['wind_avg_m_s'] > 3 && $row['wind_avg_m_s'] <= 5)
-		{
-			// 3 --- Gentle breeze 3.5-5 m/s
-			$windAvg3[] = $row['wind_avg_m_s'];
-			$windDir3[] = $row['wind_dir_deg'];
-		}
-		else if ($row['wind_avg_m_s'] > 5 && $row['wind_avg_m_s'] <= 8)
-		{
-			// 4 --- Moderate breeze 5.5-8 m/s
-			$windAvg4[] = $row['wind_avg_m_s'];
-			$windDir4[] = $row['wind_dir_deg'];
-		}
-		else if ($row['wind_avg_m_s'] > 8 && $row['wind_avg_m_s'] <= 10.5)
-		{
-			// 5 --- Fresh breeze 8.5-10.5 m/s
-			$windAvg5[] = $row['wind_avg_m_s'];
-			$windDir5[] = $row['wind_dir_deg'];
-		}
-		else if ($row['wind_avg_m_s'] > 10.5 && $row['wind_avg_m_s'] <= 13.5)
-		{
-			// 6 --- Strong breeze 11-13.5 m/s
-			$windAvg6[] = $row['wind_avg_m_s'];
-			$windDir6[] = $row['wind_dir_deg'];
-		}
-		else if ($row['wind_avg_m_s'] > 13.5 && $row['wind_avg_m_s'] <= 16.5)
-		{
-			// 7 --- Moderate gale 14-16.5 m/s
-			$windAvg7[] = $row['wind_avg_m_s'];
-			$windDir7[] = $row['wind_dir_deg'];
-		}
-		else if ($row['wind_avg_m_s'] > 16.5 && $row['wind_avg_m_s'] <= 20)
-		{
-			// 8 --- Fresh gale 17-20 m/s
-			$windAvg8[] = $row['wind_avg_m_s'];
-			$windDir8[] = $row['wind_dir_deg'];
-		}
-		else if ($row['wind_avg_m_s'] > 20)
-		{
-			$windAvg9[] = $row['wind_avg_m_s'];
-			$windDir9[] = $row['wind_dir_deg'];
-			// 9 --- Strong gale 20.5-23.5 m/s
-			// 10 -- Whole gale 24-27.5 m/s
-			// 11 -- Storm 28-31.5 m/s
-			// 12 -- Hurricane  32 m/s
-		}
-		
 		$windMax[] = $row['wind_max_m_s'];
-		$batteryOk = $row['battery_ok'];
 
 		if (strtotime($row['time']) > strtotime('-24 hour'))
 		{
@@ -240,9 +175,22 @@ else {
 </head>
 <body>
 <div class="container">
-	<div id="srvinfo" class="row">
-		<div class="col-xs-8 col-md-8">Server @<?php echo $uptime; ?></div>
-		<div class="col-xs-4 col-md-4">Weather station battery life: <?php if ($batteryOk == 1) { echo 'OK'; } else { echo 'Error'; } ?></div>
+	<div id="lastmeasure" class="row">
+		<div class="col-xs-12 col-md-12">
+			<table>
+				<tr><td>Vreme</td><td>Battery</td><td>Temp*C</td><td>Vlaznost(%)</td><td>Vetar AVG(m/s)</td><td>Vetar MAX(m/s)</td><td>Pravac Vetra</td><td>Pritisak</td></tr>
+				<tr>
+					<td><?php echo $lastRow['time']; ?></td>
+					<td><?php echo $lastRow['battery_ok']; ?></td>
+					<td><?php echo $lastRow['temperature_C']; ?></td>
+					<td><?php echo $lastRow['humidity']; ?></td>
+					<td><?php echo $lastRow['wind_avg_m_s']; ?></td>
+					<td><?php echo $lastRow['wind_max_m_s']; ?></td>
+					<td><?php echo $lastRow['wind_dir_deg']; ?></td>
+					<td><?php echo $lastRow['pressure']; ?></td>
+				</tr>
+			</table>
+		</div>
 	</div>
 	<div id="windrose" class="row">
 		<div class="col-xs-12 col-md-6"><div id="windrose1h" class="responsive-plot"></div></div>
