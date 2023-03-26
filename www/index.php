@@ -18,6 +18,7 @@ while ($row = $res->fetch_assoc()) {
 		$lastRow = $row;
 		$ts[] = $row['time'];
 		$temp[] = $row['temperature_C'];
+		$pressure[] = $row['pressure'];
 		$hum[] = $row['humidity'];
 		$rain[] = $row['rain_mm'];
 		$windDir[] = $row['wind_dir_deg'];
@@ -164,7 +165,6 @@ if (!$output) {
 	print_r(json_encode($array));
 }
 else {
-	$uptime = exec('uptime');
 ?>
 <html>
 <head>
@@ -180,14 +180,14 @@ else {
 			<table class="table">
 				<thead class="thead-light">
     				<tr>
-      					<th scope="col">Vreme</th>
-					<th scope="col">Battery</th>
+      					<th scope="col">Vreme merenja</th>
+					<th scope="col">Baterija</th>
 					<th scope="col">Temp*C</th>
+					<th scope="col">Pritisak</th>
 					<th scope="col">Vlaznost(%)</th>
 					<th scope="col">Vetar AVG(m/s)</th>
 					<th scope="col">Vetar MAX(m/s)</th>
 					<th scope="col">Pravac Vetra</th>
-					<th scope="col">Pritisak</th>
 				</tr>
 				</thead>
   				<tbody>
@@ -195,11 +195,11 @@ else {
 					<td><?php echo $lastRow['time']; ?></td>
 					<td><?php if ($lastRow['battery_ok'] == 1) { echo 'OK'; } else { echo 'End of life'; } ?></td>
 					<td><?php echo $lastRow['temperature_C']; ?></td>
+					<td><?php echo $lastRow['pressure']; ?></td>
 					<td><?php echo $lastRow['humidity']; ?></td>
 					<td><?php echo $lastRow['wind_avg_m_s']; ?></td>
 					<td><?php echo $lastRow['wind_max_m_s']; ?></td>
 					<td><?php echo $lastRow['wind_dir_deg']; ?></td>
-					<td><?php echo $lastRow['pressure']; ?></td>
 				</tr>
 				</tbody>
 			</table>
