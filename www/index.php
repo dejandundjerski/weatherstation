@@ -168,15 +168,6 @@ else {
 ?>
 <html>
 <head>
-	<style>
-		table, th, td {
-			border: 2px solid black;
-	  		border-collapse: collapse;
-		}
-		th, td {
-	  		padding: 5px;
-		}
-	</style>
 	<script src="https://cdn.plot.ly/plotly-2.18.2.min.js"></script>
 	<script src="https://code.jquery.com/jquery-3.6.3.slim.min.js" integrity="sha256-ZwqZIVdD3iXNyGHbSYdsmWP//UBokj2FHAxKuSBKDSo=" crossorigin="anonymous"></script>	
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
@@ -186,8 +177,20 @@ else {
 <div class="container">
 	<div id="lastmeasure" class="row">
 		<div class="col-xs-12 col-md-12">
-			<table>
-				<tr><td>Vreme</td><td>Battery</td><td>Temp*C</td><td>Vlaznost(%)</td><td>Vetar AVG(m/s)</td><td>Vetar MAX(m/s)</td><td>Pravac Vetra</td><td>Pritisak</td></tr>
+			<table class="table">
+				<thead class="thead-light">
+    				<tr>
+      					<th scope="col">Vreme</th>
+					<th scope="col">Battery</th>
+					<th scope="col">Temp*C</th>
+					<th scope="col">Vlaznost(%)</th>
+					<th scope="col">Vetar AVG(m/s)</th>
+					<th scope="col">Vetar MAX(m/s)</th>
+					<th scope="col">Pravac Vetra</th>
+					<th scope="col">Pritisak</th>
+				</tr>
+				</thead>
+  				<tbody>
 				<tr>
 					<td><?php echo $lastRow['time']; ?></td>
 					<td><?php echo $lastRow['battery_ok']; ?></td>
@@ -198,6 +201,7 @@ else {
 					<td><?php echo $lastRow['wind_dir_deg']; ?></td>
 					<td><?php echo $lastRow['pressure']; ?></td>
 				</tr>
+				</tbody>
 			</table>
 		</div>
 	</div>
