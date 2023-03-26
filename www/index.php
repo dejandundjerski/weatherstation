@@ -193,7 +193,7 @@ else {
   				<tbody>
 				<tr>
 					<td><?php echo $lastRow['time']; ?></td>
-					<td><?php echo $lastRow['battery_ok']; ?></td>
+					<td><?php if ($lastRow['battery_ok'] == 1) { echo 'OK'; } else { echo 'End of life'; } ?></td>
 					<td><?php echo $lastRow['temperature_C']; ?></td>
 					<td><?php echo $lastRow['humidity']; ?></td>
 					<td><?php echo $lastRow['wind_avg_m_s']; ?></td>
