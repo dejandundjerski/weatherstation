@@ -245,9 +245,8 @@ else {
 		<div class="col-xs-4 col-md-4">Weather station battery life: <?php if ($batteryOk == 1) { echo 'OK'; } else { echo 'Error'; } ?></div>
 	</div>
 	<div id="windrose" class="row">
-		<div class="col-xs-12 col-md-4"><div id="windrose1h" class="responsive-plot"></div></div>
-	        <div class="col-xs-12 col-md-4"><div id="windrose1d" class="responsive-plot"></div></div>
-	        <div class="col-xs-12 col-md-4"><div id="windrose7d" class="responsive-plot"></div></div>
+		<div class="col-xs-12 col-md-6"><div id="windrose1h" class="responsive-plot"></div></div>
+		<div class="col-xs-12 col-md-6"><div id="windrose1d" class="responsive-plot"></div></div>
 	</div>
 	<div id="data" class="row">
 		<div id="ws"></div>
@@ -308,86 +307,6 @@ var rain = {
 	yaxis: 'y5',
 	name: 'Kisa (mm)',
 	type: 'scatter'
-};
-
-var barplot0 = {
-	r: <?php print_r(json_encode($windAvg0)); ?>,
-	theta: <?php print_r(json_encode($windDir0)); ?>,
-	name: '<0.5m/s',
-	type: 'scatterpolar',
-        mode: 'markers+text'
-};
-			    
-var barplot1 = {
-	r: <?php print_r(json_encode($windAvg1)); ?>,
-	theta: <?php print_r(json_encode($windDir1)); ?>,
-	name: '0.5-1.5m/s',
-	type: 'scatterpolar',
-	mode: 'markers+text'
-};
-
-var barplot2 = {
-	r: <?php print_r(json_encode($windAvg2)); ?>,
-	theta: <?php print_r(json_encode($windDir2)); ?>,
-	name: '1.5-3m/s',
-	type: 'scatterpolar',
-        mode: 'markers+text'
-};
-
-var barplot3 = {
-	r: <?php print_r(json_encode($windAvg3)); ?>,
-	theta: <?php print_r(json_encode($windDir3)); ?>,
-	name: '3-5m/s',
-	type: 'scatterpolar',
-        mode: 'markers+text'
-};
-
-var barplot4 = {
-	r: <?php print_r(json_encode($windAvg4)); ?>,
-	theta: <?php print_r(json_encode($windDir4)); ?>,
-	name: '5-8m/s',
-	type: 'scatterpolar',
-        mode: 'markers+text'
-};
-
-var barplot5 = {
-	r: <?php print_r(json_encode($windAvg5)); ?>,
-	theta: <?php print_r(json_encode($windDir5)); ?>,
-	name: '8-10.5m/s',
-	type: 'scatterpolar',
-        mode: 'markers+text'
-};
-
-var barplot6 = {
-	r: <?php print_r(json_encode($windAvg6)); ?>,
-	theta: <?php print_r(json_encode($windDir6)); ?>,
-	name: '10.5-13.5m/s',
-	type: 'scatterpolar',
-        mode: 'markers+text'
-};
-
-var barplot7 = {
-	r: <?php print_r(json_encode($windAvg7)); ?>,
-	theta: <?php print_r(json_encode($windDir7)); ?>,
-	name: '13.5-16.5m/s',
-	type: 'scatterpolar',
-        mode: 'markers+text'
-};
-
-var barplot8 = {
-	r: <?php print_r(json_encode($windAvg8)); ?>,
-	theta: <?php print_r(json_encode($windDir8)); ?>,
-	name: '16.5-20m/s',
-	type: 'scatterpolar',
-        mode: 'markers+text'
-};
-
-var barplot9 = {
-	r: <?php print_r(json_encode($windAvg9)); ?>,
-	theta: <?php print_r(json_encode($windDir9)); ?>,
-	name: '>20m/s',
-	type: 'scatterpolar',
-        mode: 'markers+text'
 };
 
 var barplot0h = {
@@ -550,20 +469,8 @@ var barplot9d = {
         mode: 'markers+text'
 };
 
-var dataBP7d = [barplot1,barplot2,barplot3,barplot4,barplot5,barplot6,barplot7,barplot8,barplot9];
 var dataBP1d = [barplot1d,barplot2d,barplot3d,barplot4d,barplot5d,barplot6d,barplot7d,barplot8d,barplot9d];
 var dataBP1h = [barplot1h,barplot2h,barplot3h,barplot4h,barplot5h,barplot6h,barplot7h,barplot8h,barplot9h];
-
-var layout7d = {
-	title: "JKZ - Ruza vetrova - 7 dana",
-	polar: {
-		barmode: "overlay",
-		bargap: 0,
-		radialaxis: {ticksuffix: "m/s", angle: 0, dtick: 1},
-		angularaxis: {direction: "clockwise"}
-	},
-	grid: {rows: 1, columns: 1, pattern: 'independent'},
-};
 	
 var layout1d = {
 	title: "JKZ - Ruza vetrova - 24 sata",
@@ -588,7 +495,6 @@ var layout1h = {
 };
 
 var config = {responsive: true};
-Plotly.newPlot( 'windrose7d' , dataBP7d, layout7d, config);
 Plotly.newPlot( 'windrose1d' , dataBP1d, layout1d, config);
 Plotly.newPlot( 'windrose1h' , dataBP1h, layout1h, config);
 
