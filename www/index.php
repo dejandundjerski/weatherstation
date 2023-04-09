@@ -1,21 +1,28 @@
 <?php
-$conn = new mysqli("localhost","root",trim(file_get_contents("pwd")),"weather");
-$res = $conn->query("SELECT * FROM data WHERE time > now() - INTERVAL 7 day;");
-
 $output = true;
+$query = "SELECT * FROM data WHERE time > now() - INTERVAL 7 day;";
+
 if ($_GET['output'] == 'json')
 {
 	$output = false;
+	$onlyLast = false;
+	if ($_GET['period'] == "current")
+	{
+		$query = "SELECT * FROM data ORDER BY id DESC LIMIT 1;";
+	}
 }
 
+$conn = new mysqli("localhost","root",trim(file_get_contents("pwd")),"weather");
+$res = $conn->query();
+
 while ($row = $res->fetch_assoc()) {
+	$lastRow = $row;
 	if (!$output)
 	{
 		$array[] = $row;
 	}
 	else
 	{
-		$lastRow = $row;
 		$ts[] = $row['time'];
 		$temp[] = $row['temperature_C'];
 		$pressure[] = $row['pressure'];
