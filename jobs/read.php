@@ -18,11 +18,23 @@ function sendToUrl($url, $data)
 	var_dump($resp);
 }
 
+function readPressure()
+{
+	return 0;
+}
+
 $oldLine = "";
+
+$pressure = readPressure();
+
 while (FALSE !== ($line = fgets(STDIN)))
 {
 	if ($oldLine != $line)
 	{
+		$jsonLine = json_decode($line, true);
+		$jsonLine['pressure'] = $pressure;
+		$line = json_encode($jsonLine);
+		
 		sendToUrl('http://localhost/push.php', $line);
 		sendToUrl('http://ddwwwhost.cloudapp.net/push.php', $line);
 		$oldLine = $line;
