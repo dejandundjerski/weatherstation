@@ -13,7 +13,7 @@ if ($_GET['output'] == 'json')
 }
 
 $conn = new mysqli("localhost","root",trim(file_get_contents("pwd")),"weather");
-$res = $conn->query();
+$res = $conn->query($query);
 
 while ($row = $res->fetch_assoc()) {
 	$lastRow = $row;
