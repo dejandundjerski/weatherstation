@@ -20,6 +20,7 @@ function sendToUrl($url, $data)
 
 function readPressure()
 {
+	// return shell_exec("python read_pressure.py");
 	return 0;
 }
 
