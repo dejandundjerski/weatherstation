@@ -14,6 +14,7 @@ CREATE TABLE `data` (
   `wind_dir_deg` int(11) NOT NULL,
   `wind_avg_m_s` decimal(10,2) NOT NULL,
   `wind_max_m_s` decimal(10,2) NOT NULL,
+  `pressure` decimal(10,2) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4382 DEFAULT CHARSET=latin1;
 
