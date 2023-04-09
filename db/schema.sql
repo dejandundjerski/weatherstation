@@ -6,7 +6,7 @@
 DROP TABLE IF EXISTS `data`;
 CREATE TABLE `data` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `battery_ok` int(11) NOT NULL,
   `temperature_C` decimal(10,3) NOT NULL,
   `humidity` decimal(10,2) NOT NULL,
