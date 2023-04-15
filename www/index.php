@@ -202,7 +202,8 @@ else {
 	<div id="lastmeasure" class="row">
 		<div class="col-xs-12 col-md-6">
 			<table class="table">
-				<tr><td colspan="2">
+				<tr><td colspan="2" align="center"></td></tr>
+				<tr><td colspan="2" align="center">
 					<a class="btn btn-primary btn-sm" href="index.php" role="button">Last 7 days</a>
 					<a class="btn btn-primary btn-sm" href="index.php?range=3d" role="button">Last 3 days</a>
 					<a class="btn btn-primary btn-sm" href="index.php?range=1d" role="button">Last day</a>
