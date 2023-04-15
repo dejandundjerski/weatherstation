@@ -240,12 +240,21 @@ var hum = {
 	name: 'Vlaznost(%)',
 	type: 'scatter'
 };
+	
+var hum = {
+	x: <?php print_r(json_encode($ts)); ?>,
+	y: <?php print_r(json_encode($pressure)); ?>,
+	xaxis: 'x3',
+	yaxis: 'y3',
+	name: 'Pritisak (hPa)',
+	type: 'scatter'
+};
 
 var windAvg = {
 	x: <?php print_r(json_encode($ts)); ?>,
 	y: <?php print_r(json_encode($windAvg)); ?>,
-	xaxis: 'x3',
-	yaxis: 'y3',
+	xaxis: 'x4',
+	yaxis: 'y4',
 	name: 'Vetar AVG(m/s)',
 	type: 'scatter'
 };
@@ -253,8 +262,8 @@ var windAvg = {
 var windMax = {
 	x: <?php print_r(json_encode($ts)); ?>,
 	y: <?php print_r(json_encode($windMax)); ?>,
-	xaxis: 'x3',
-	yaxis: 'y3',
+	xaxis: 'x4',
+	yaxis: 'y4',
 	name: 'Vetar MAX(m/s)',
 	type: 'scatter'
 };
@@ -262,8 +271,8 @@ var windMax = {
 var windDir = {
 	x: <?php print_r(json_encode($ts)); ?>,
 	y: <?php print_r(json_encode($windDir)); ?>,
-	xaxis: 'x4',
-	yaxis: 'y4',
+	xaxis: 'x5',
+	yaxis: 'y5',
 	name: 'Pravac vetra',
 	type: 'scatter'
 };
@@ -271,8 +280,8 @@ var windDir = {
 var rain = {
 	x: <?php print_r(json_encode($ts)); ?>,
 	y: <?php print_r(json_encode($rain)); ?>,
-	xaxis: 'x5',
-	yaxis: 'y5',
+	xaxis: 'x6',
+	yaxis: 'y6',
 	name: 'Kisa (mm)',
 	type: 'scatter'
 };
@@ -463,7 +472,7 @@ var layout1h = {
 };
 
 var config = {responsive: true};
-Plotly.newPlot( 'windrose1d' , dataBP1d, layout1d, config);
+//Plotly.newPlot( 'windrose1d' , dataBP1d, layout1d, config);
 Plotly.newPlot( 'windrose1h' , dataBP1h, layout1h, config);
 
 var axis = {
@@ -481,14 +490,16 @@ var axis2 = {domain: [0.0, 0.95], anchor: 'y2', showticklabels: false}
 var axis3 = {domain: [0.0, 0.95], anchor: 'y5'}
 var axis9 = {domain: [0.0, 0.95], anchor: 'y4', showticklabels: false}
 var axis7 = {domain: [0.0, 0.95], anchor: 'y3', showticklabels: false}
-var axis4 = {domain: [0.40, 0.59], anchor: 'x3' }
-var axis5 = {domain: [0.60, 0.79], anchor: 'x2' }
-var axis6 = {domain: [0.20, 0.39], anchor: 'x4' }
-var axis8 = {domain: [0.80, 0.99], anchor: 'x1' }
-var axis10 ={domain: [0.00, 0.19], anchor: 'x5' } 
+var axis11 = {domain: [0.0, 0.95], anchor: 'y6', showticklabels: false}
+var axis4 = {domain: [0.49, 0.65], anchor: 'x3' }
+var axis5 = {domain: [0.66, 0.82], anchor: 'x2' }
+var axis6 = {domain: [0.33, 0.48], anchor: 'x4' }
+var axis8 = {domain: [0.83, 0.99], anchor: 'x1' }
+var axis10 ={domain: [0.16, 0.32], anchor: 'x5' } 
+var axis12 ={domain: [0.00, 0.15], anchor: 'x6' } 
 
 var layoutChart = {
-	title: "JK Zemun - Meteo stanica - 7 dana",
+	title: "JK Zemun - Meteo stanica",
 	showlegend: true,
 	xaxis1: Object.assign(axis1,axis),
 	xaxis2: Object.assign(axis2,axis),
@@ -500,9 +511,11 @@ var layoutChart = {
  	yaxis4: Object.assign(axis6,axis),
 	xaxis5: Object.assign(axis3,axis),
 	yaxis5: Object.assign(axis10,axis),
+	xaxis6: Object.assign(axis11,axis),
+	yaxis6: Object.assign(axis12,axis),
 }
 
-var data = [temp, hum, windAvg, windMax, windDir, rain];
+var data = [temp, hum, pressure, windAvg, windMax, windDir, rain];
 Plotly.newPlot('ws', data, layoutChart, config);
 
 </script>
