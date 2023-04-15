@@ -190,7 +190,7 @@ else {
       					<th scope="col">Vreme merenja</th>
 					<th scope="col">Baterija</th>
 					<th scope="col">Temp*C</th>
-					<th scope="col">Pritisak</th>
+					<th scope="col">Pritisak(hPa)</th>
 					<th scope="col">Vlaznost(%)</th>
 					<th scope="col">Vetar AVG(m/s)</th>
 					<th scope="col">Vetar MAX(m/s)</th>
