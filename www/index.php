@@ -1,21 +1,20 @@
 <?php
 $output = true;
-
 $range = "7 day";
+
 if (isset($_GET['range']))
 {
-		if ($_GET['range'] == "3d")
-		{
-			$range = "3 day";
-		}
-		else if ($_GET['range'] == "1d")
-		{
-			$range = "1 day";
-		}
-		else if ($_GET['range'] == "1h")
-		{
-			$range = "1 hour";
-		}
+	if ($_GET['range'] == "3d")
+	{
+		$range = "3 day";
+	}
+	else if ($_GET['range'] == "1d")
+	{
+		$range = "1 day";
+	}
+	else if ($_GET['range'] == "1h")
+	{
+		$range = "1 hour";
 	}
 }
 $query = "SELECT * FROM data WHERE time > now() - INTERVAL " . $range . ";";
