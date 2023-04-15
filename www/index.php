@@ -1,17 +1,34 @@
 <?php
 $output = true;
-$query = "SELECT * FROM data WHERE time > now() - INTERVAL 7 day;";
 
-if ($_GET['output'] == 'json')
+if (isset($_GET['output']) && $_GET['output'] == 'json')
 {
 	$output = false;
 	$onlyLast = false;
-	if ($_GET['period'] == "current")
+	if (isset($_GET['period']) && $_GET['period'] == "current")
 	{
 		$query = "SELECT * FROM data ORDER BY id DESC LIMIT 1;";
 	}
 }
 
+$range = "7 day";
+if (isset($_GET['range']))
+{
+	if ($_GET['range'] == "3d")
+	{
+		$range = "3 day";
+	}
+	else if ($_GET['range'] == "1d")
+	{
+		$range = "1 day";
+	}
+	else if ($_GET['range'] == "1h")
+	{
+		$range = "1 hour";
+	}
+}
+
+$query = "SELECT * FROM data WHERE time > now() - INTERVAL " . $range . ";";
 $conn = new mysqli("localhost","root",trim(file_get_contents("pwd")),"weather");
 $res = $conn->query($query);
 
@@ -182,6 +199,12 @@ else {
 </head>
 <body>
 <div class="container">
+	<div id="navbuttons" class="row">
+		<a class="btn btn-primary btn-lg" href="index.php" role="button">Last 7 days</a>
+		<a class="btn btn-primary btn-lg" href="index.php?range=3d" role="button">Last 3 days</a>
+		<a class="btn btn-primary btn-lg" href="index.php?range=1d" role="button">Last day</a>
+		<a class="btn btn-primary btn-lg" href="index.php?range=1h" role="button">Last hour</a>
+	</div>
 	<div id="lastmeasure" class="row">
 		<div class="col-xs-12 col-md-12">
 			<table class="table">
