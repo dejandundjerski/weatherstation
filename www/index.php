@@ -213,8 +213,9 @@ else {
 		</div>
 	</div>
 	<div id="windrose" class="row">
-		<div class="col-xs-12 col-md-6"><div id="windrose1h" class="responsive-plot"></div></div>
-		<div class="col-xs-12 col-md-6"><div id="windrose1d" class="responsive-plot"></div></div>
+		<!-- div class="col-xs-12 col-md-6"><div id="windrose1h" class="responsive-plot"></div></div>
+		<div class="col-xs-12 col-md-6"><div id="windrose1d" class="responsive-plot"></div></div>  -->
+		<div class="col-xs-12 col-md-12"><div id="windrose1h" class="responsive-plot"></div></div>
 	</div>
 	<div id="data" class="row">
 		<div id="ws"></div>
