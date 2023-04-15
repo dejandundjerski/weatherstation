@@ -206,40 +206,28 @@ else {
 		<a class="btn btn-primary btn-sm" href="index.php?range=1h" role="button">Last hour</a>
 	</div>
 	<div id="lastmeasure" class="row">
-		<div class="col-xs-12 col-md-12">
+		<div class="col-xs-12 col-md-6">
 			<table class="table">
-				<thead class="thead-light">
-    				<tr>
-      					<th scope="col">Vreme merenja</th>
-					<th scope="col">Baterija</th>
-					<th scope="col">Temp*C</th>
-					<th scope="col">Pritisak(hPa)</th>
-					<th scope="col">Vlaznost(%)</th>
-					<th scope="col">Vetar AVG(m/s)</th>
-					<th scope="col">Vetar MAX(m/s)</th>
-					<th scope="col">Pravac Vetra</th>
-				</tr>
-				</thead>
-  				<tbody>
 				<tr>
-					<td><?php echo $lastRow['time']; ?></td>
-					<td><?php if ($lastRow['battery_ok'] == 1) { echo 'OK'; } else { echo 'End of life'; } ?></td>
-					<td><?php echo $lastRow['temperature_C']; ?></td>
-					<td><?php echo $lastRow['pressure']; ?></td>
-					<td><?php echo $lastRow['humidity']; ?></td>
-					<td><?php echo $lastRow['wind_avg_m_s']; ?></td>
-					<td><?php echo $lastRow['wind_max_m_s']; ?></td>
-					<td><?php echo $lastRow['wind_dir_deg']; ?></td>
+					<td scope="col">Vreme merenja</td><td><?php echo $lastRow['time']; ?></td>
+					<td scope="col">Baterija</td><td><?php if ($lastRow['battery_ok'] == 1) { echo 'OK'; } else { echo 'End of life'; } ?></td>
+					<td scope="col">Temp*C</td><td><?php echo $lastRow['temperature_C']; ?></td>
+					<td scope="col">Pritisak(hPa)</td><td><?php echo $lastRow['pressure']; ?></td>
+					<td scope="col">Vlaznost(%)</td><td><?php echo $lastRow['humidity']; ?></td>
+					<td scope="col">Vetar AVG(m/s)</td><td><?php echo $lastRow['wind_avg_m_s']; ?></td>
+					<td scope="col">Vetar MAX(m/s)</td><td><?php echo $lastRow['wind_max_m_s']; ?></td>
+					<td scope="col">Pravac Vetra</td><td><?php echo $lastRow['wind_dir_deg']; ?></td>
 				</tr>
 				</tbody>
 			</table>
 		</div>
+		<div class="col-xs-12 col-md-6"><div id="windrose1h" class="responsive-plot"></div></div>
 	</div>
+	<!--
 	<div id="windrose" class="row">
-		<!-- div class="col-xs-12 col-md-6"><div id="windrose1h" class="responsive-plot"></div></div>
-		<div class="col-xs-12 col-md-6"><div id="windrose1d" class="responsive-plot"></div></div>  -->
-		<div class="col-xs-12 col-md-12"><div id="windrose1h" class="responsive-plot"></div></div>
-	</div>
+		<div class="col-xs-12 col-md-6"><div id="windrose1h" class="responsive-plot"></div></div>
+		<div class="col-xs-12 col-md-6"><div id="windrose1d" class="responsive-plot"></div></div>  
+	</div>-->
 	<div id="data" class="row">
 		<div id="ws"></div>
 	</div>
