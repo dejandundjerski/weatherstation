@@ -199,15 +199,15 @@ else {
 </head>
 <body>
 <div class="container">
-	<div id="navbuttons" class="row">
-		<a class="btn btn-primary btn-sm" href="index.php" role="button">Last 7 days</a>
-		<a class="btn btn-primary btn-sm" href="index.php?range=3d" role="button">Last 3 days</a>
-		<a class="btn btn-primary btn-sm" href="index.php?range=1d" role="button">Last day</a>
-		<a class="btn btn-primary btn-sm" href="index.php?range=1h" role="button">Last hour</a>
-	</div>
 	<div id="lastmeasure" class="row">
 		<div class="col-xs-12 col-md-6">
 			<table class="table">
+				<tr><td colspan="2">
+					<a class="btn btn-primary btn-sm" href="index.php" role="button">Last 7 days</a>
+					<a class="btn btn-primary btn-sm" href="index.php?range=3d" role="button">Last 3 days</a>
+					<a class="btn btn-primary btn-sm" href="index.php?range=1d" role="button">Last day</a>
+					<a class="btn btn-primary btn-sm" href="index.php?range=1h" role="button">Last hour</a>
+				</td></tr>
 				<tr><th scope="row">Vreme merenja</th><td><?php echo $lastRow['time']; ?></td></tr>
 				<tr><th scope="row">Baterija</th><td><?php if ($lastRow['battery_ok'] == 1) { echo 'OK'; } else { echo 'End of life'; } ?></td></tr>
 				<tr><th scope="row">Temp*C</th><td><?php echo $lastRow['temperature_C']; ?></td></tr>
