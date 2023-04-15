@@ -200,10 +200,10 @@ else {
 <body>
 <div class="container">
 	<div id="navbuttons" class="row">
-		<a class="btn btn-primary btn-lg" href="index.php" role="button">Last 7 days</a>
-		<a class="btn btn-primary btn-lg" href="index.php?range=3d" role="button">Last 3 days</a>
-		<a class="btn btn-primary btn-lg" href="index.php?range=1d" role="button">Last day</a>
-		<a class="btn btn-primary btn-lg" href="index.php?range=1h" role="button">Last hour</a>
+		<a class="btn btn-primary btn-sm" href="index.php" role="button">Last 7 days</a>
+		<a class="btn btn-primary btn-sm" href="index.php?range=3d" role="button">Last 3 days</a>
+		<a class="btn btn-primary btn-sm" href="index.php?range=1d" role="button">Last day</a>
+		<a class="btn btn-primary btn-sm" href="index.php?range=1h" role="button">Last hour</a>
 	</div>
 	<div id="lastmeasure" class="row">
 		<div class="col-xs-12 col-md-12">
