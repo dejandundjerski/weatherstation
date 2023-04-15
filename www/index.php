@@ -208,17 +208,14 @@ else {
 	<div id="lastmeasure" class="row">
 		<div class="col-xs-12 col-md-6">
 			<table class="table">
-				<tr>
-					<td scope="col">Vreme merenja</td><td><?php echo $lastRow['time']; ?></td>
-					<td scope="col">Baterija</td><td><?php if ($lastRow['battery_ok'] == 1) { echo 'OK'; } else { echo 'End of life'; } ?></td>
-					<td scope="col">Temp*C</td><td><?php echo $lastRow['temperature_C']; ?></td>
-					<td scope="col">Pritisak(hPa)</td><td><?php echo $lastRow['pressure']; ?></td>
-					<td scope="col">Vlaznost(%)</td><td><?php echo $lastRow['humidity']; ?></td>
-					<td scope="col">Vetar AVG(m/s)</td><td><?php echo $lastRow['wind_avg_m_s']; ?></td>
-					<td scope="col">Vetar MAX(m/s)</td><td><?php echo $lastRow['wind_max_m_s']; ?></td>
-					<td scope="col">Pravac Vetra</td><td><?php echo $lastRow['wind_dir_deg']; ?></td>
-				</tr>
-				</tbody>
+				<tr><td scope="col">Vreme merenja</td><td><?php echo $lastRow['time']; ?></td></tr>
+				<tr><td scope="col">Baterija</td><td><?php if ($lastRow['battery_ok'] == 1) { echo 'OK'; } else { echo 'End of life'; } ?></td></tr>
+				<tr><td scope="col">Temp*C</td><td><?php echo $lastRow['temperature_C']; ?></td></tr>
+				<tr><td scope="col">Pritisak(hPa)</td><td><?php echo $lastRow['pressure']; ?></td></tr>
+				<tr><td scope="col">Vlaznost(%)</td><td><?php echo $lastRow['humidity']; ?></td></tr>
+				<tr><td scope="col">Vetar AVG(m/s)</td><td><?php echo $lastRow['wind_avg_m_s']; ?></td></tr>
+				<tr><td scope="col">Vetar MAX(m/s)</td><td><?php echo $lastRow['wind_max_m_s']; ?></td></tr>
+				<tr><td scope="col">Pravac Vetra</td><td><?php echo $lastRow['wind_dir_deg']; ?></td></tr>
 			</table>
 		</div>
 		<div class="col-xs-12 col-md-6"><div id="windrose1h" class="responsive-plot"></div></div>
