@@ -20,8 +20,12 @@ function sendToUrl($url, $data)
 
 function readPressure()
 {
-	// return shell_exec("python read_pressure.py");
-	return 0;
+	if ($reading = shell_exec("python /home/jkz/weatherstation/jobs/read_pressure.py")) 
+	{ 
+		return $reading;
+	}
+	
+	return -1;
 }
 
 $oldLine = "";
