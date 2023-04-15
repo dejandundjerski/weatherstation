@@ -1,9 +1,17 @@
-from Adafruit_BME280 import *
+#!/usr/bin/env python
+from bmp280 import BMP280
 
-BME280_OSAMPLE_8 = 4
+try:
+    from smbus2 import SMBus
+except ImportError:
+    from smbus import SMBus
 
-sensor = BME280(t_mode=BME280_OSAMPLE_8, p_mode=BME280_OSAMPLE_8, h_mode=BME280_OSAMPLE_8, busnum=1)
-# degrees = self.sensor.read_temperature()
-hPa = self.sensor.read_pressure() / 100
-# humidity = self.sensor.read_humidity()
-print(hPa)
+# Initialise the BMP280
+bus = SMBus(1)
+bmp280 = BMP280(i2c_dev=bus)
+
+temperature = bmp280.get_temperature()
+pressure = bmp280.get_pressure()
+
+output = {'inner_temperature':temperature,'pressure':pressure}
+print(output)
