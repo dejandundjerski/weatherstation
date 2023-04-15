@@ -241,7 +241,7 @@ var hum = {
 	type: 'scatter'
 };
 	
-var hum = {
+var pressure = {
 	x: <?php print_r(json_encode($ts)); ?>,
 	y: <?php print_r(json_encode($pressure)); ?>,
 	xaxis: 'x3',
