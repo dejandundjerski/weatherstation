@@ -497,10 +497,10 @@ var axis = {
 
 var axis1 = {domain: [0.0, 0.95], anchor: 'y1', showticklabels: false}
 var axis2 = {domain: [0.0, 0.95], anchor: 'y2', showticklabels: false}
-var axis3 = {domain: [0.0, 0.95], anchor: 'y5'}
+var axis3 = {domain: [0.0, 0.95], anchor: 'y5', showticklabels: false}
 var axis9 = {domain: [0.0, 0.95], anchor: 'y4', showticklabels: false}
 var axis7 = {domain: [0.0, 0.95], anchor: 'y3', showticklabels: false}
-var axis11 = {domain: [0.0, 0.95], anchor: 'y6', showticklabels: false}
+var axis11 = {domain: [0.0, 0.95], anchor: 'y6'}
 var axis4 = {domain: [0.49, 0.65], anchor: 'x3' }
 var axis5 = {domain: [0.66, 0.82], anchor: 'x2' }
 var axis6 = {domain: [0.33, 0.48], anchor: 'x4' }
