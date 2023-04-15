@@ -1,6 +1,25 @@
 <?php
 $output = true;
 
+$range = "7 day";
+if (isset($_GET['range']))
+{
+		if ($_GET['range'] == "3d")
+		{
+			$range = "3 day";
+		}
+		else if ($_GET['range'] == "1d")
+		{
+			$range = "1 day";
+		}
+		else if ($_GET['range'] == "1h")
+		{
+			$range = "1 hour";
+		}
+	}
+}
+$query = "SELECT * FROM data WHERE time > now() - INTERVAL " . $range . ";";
+
 if (isset($_GET['output']) && $_GET['output'] == 'json')
 {
 	$output = false;
@@ -11,24 +30,6 @@ if (isset($_GET['output']) && $_GET['output'] == 'json')
 	}
 }
 
-$range = "7 day";
-if (isset($_GET['range']))
-{
-	if ($_GET['range'] == "3d")
-	{
-		$range = "3 day";
-	}
-	else if ($_GET['range'] == "1d")
-	{
-		$range = "1 day";
-	}
-	else if ($_GET['range'] == "1h")
-	{
-		$range = "1 hour";
-	}
-}
-
-$query = "SELECT * FROM data WHERE time > now() - INTERVAL " . $range . ";";
 $conn = new mysqli("localhost","root",trim(file_get_contents("pwd")),"weather");
 $res = $conn->query($query);
 
