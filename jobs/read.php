@@ -41,7 +41,7 @@ while (FALSE !== ($line = fgets(STDIN)))
 		$line = json_encode($jsonLine);
 		
 		sendToUrl('http://localhost/push.php', $line);
-		sendToUrl('http://ddwwwhost.cloudapp.net/push.php', $line);
+		sendToUrl('http://ddw2.northeurope.cloudapp.azure.com/push.php', $line);
 		$oldLine = $line;
 	}
 }
